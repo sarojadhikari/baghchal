@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <script type ="text/javascript" src = "./js/ai.js"></script>
+    <script type = "application/x-javascript" src = "./js/game.js"></script>
+  </head>
+        
+  <body bgcolor=white>
+    <table>
+      <tbody align="center">
+
+        <tr>
+          <canvas id="canvas" width="480" height="480" onmousedown="clickBoard()" onmouseup="mouseup()"></canvas>                   
+          <td>
+            <table border="3px" width="240px" style="position: absolute; left: 500px; top: 30px; padding: 5px;">
+              <tbody align="center">
+
+                <tr><td><h2>Baghchal</h2></td></tr>
+                <tr><td><strong>New Game</strong></td></tr>
+                <tr><td>Tiger Vs Goat</td></tr>
+                <tr><td>
+                <button id = "newGame1" onclick = "game(2)">Computer Vs Human</button>
+                </td></tr>
+                <tr><td><button id="newGame2" onclick = "game(1)"> Human Vs Human</button></td></tr>
+                <tr><td>Turn Of:<input type="text" id="turnof" value="Goat"></input></td></tr>
+                <tr><td>Goats Onhand:<input type="text" id="onhand" value="20"></input></td></tr>
+                <tr><td>Goats Eaten:<input type="text" id="eaten" value="0"></input></td></tr>                                                   
+
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script language="JavaScript1.2">
+      <!--
+      // Detect if the bwhichPieceXser is IE or not.
+      // If it is not IE, we assume that the bwhichPieceXser is NS.
+      var IE = document.all?true:false
+      // If NS -- that is, !IE -- then set up for mouse capture
+      if (!IE) document.captureEvents(Event.MOUSEMOVE)
+      // Set-up to use getMouseXY function onMouseMove
+      document.onmousemove = getMouseXY;
+                  
+      // Temporary variables to hold mouse x-y pos.s
+      mouseX = 0
+      mouseY = 0
+                  
+      // Main function to retrieve mouse x-y pos.s
+      function getMouseXY(e) {
+        if (IE) { // grab the x-y pos.s if bwhichPieceXser is IE
+          mouseX = event.clientX + document.body.scrollLeft
+          mouseY = event.clientY + document.body.scrollTop
+          } 
+          else {  // grab the x-y pos.s if bwhichPieceXser is NS
+            mouseX = e.pageX
+            mouseY = e.pageY
+          }                  
+          mouseX = mouseX - canvas.offsetLeft;
+          mouseY = mouseY - canvas.offsetTop;
+                                
+          // catch possible negative values in NS4
+          if (mouseX < 0){mouseX = 0}
+          if (mouseY < 0){mouseY = 0}
+                                
+          return true
+        }
+      //-->
+    </script>
+    <script type ="text/javascript">game({{ game }})</script>
+
+  </body>
+
+</html> 

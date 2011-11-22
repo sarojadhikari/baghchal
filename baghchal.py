@@ -1,5 +1,17 @@
+"""
+As it stands now, the code below is based on the most basic demo from
+the google appengine code and is very preliminary as it just about
+runs the already existing html/javascript code that has all the
+baghchal code ready to go.
+
+The next step is to modify the following code to make the program be
+able to identify users from their login information, and create a
+game when there are two people logged in simultaneously and be
+able to change turns and identify winners and prompt so.
+"""
+
 import cgi
-import datetime
+import datetime # not needed now.
 import os
 
 from google.appengine.ext import db

@@ -21,8 +21,8 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext.webapp import template
 
 class GetInfo(db.Model):
-	author = db.UserProperty();
-	date = db.DateTimeProperty(auto_now_add=True)
+  author = db.UserProperty()
+  date = db.DateTimeProperty(auto_now_add=True)
 	
 class MainPage(webapp.RequestHandler):
   def get(self):
